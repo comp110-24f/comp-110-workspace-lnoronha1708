@@ -29,7 +29,7 @@ def contains_char(secret_word: str, char_guess: str) -> bool:
 # eventually figured out, simplified
 
 
-def emojified(secret: str, guess: str) -> None:
+def emojified(guess: str, secret: str) -> str:
     """Wordle emoji colors for letters"""
     assert len(guess) == len(secret)
     WHITE_BOX: str = "\U00002B1C"
