@@ -7,6 +7,8 @@ def all(list1: list[int], val1: int) -> bool:
     """returns bool if val1 is same value as all ints in list"""
     idx: int = 0
     count: int = 0
+    if len(list1) == 0:
+        return False
     while idx < len(list1):
         if list1[idx] == val1:
             count += 1
@@ -37,8 +39,13 @@ def max(list2: list[int]) -> int:
 
 
 def is_equal(list1: list[int], list2: list[int]) -> bool:
+    """every element in list is equal in both lists"""
     idx: int = 0
-    while idx < len(list1) and idx < len(list2):
+    if len(list1) == 0 and len(list2) == 0:
+        return True
+    if len(list1) != len(list2):
+        return False
+    while idx < len(list1) and len(list2):
         if list1[idx] == list2[idx]:
             idx += 1
         else:
@@ -47,6 +54,7 @@ def is_equal(list1: list[int], list2: list[int]) -> bool:
 
 
 # not sure if i need to return False if len is dif? rn it return True when not same len
+# keep getting "Both lists are empty" error
 
 
 def extend(list1: list[int], list2: list[int]) -> None:
